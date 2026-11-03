@@ -8,17 +8,24 @@ const topRatedMoviesPage = () => {
 
   useEffect(() => {
     getTopRatedMovies().then((movies) => {
-        setMovies(movies);
+      setMovies(movies);
     });
-    }, []);
+  }, []);
 
-    return (
-        <PageTemplate
-            title="Top Rated Movies"
-            movies={movies}
-            action={(movie) => <AddToFavoritesIcon movie={movie} />}
-        />
-    );
+  return (
+    <PageTemplate
+      title="Top Rated Movies"
+      movies={movies}
+      action={(movie) => {
+        return (
+          <>
+            <AddToFavoritesIcon movie={movie} />
+            <AddtoPlaylistIcon movie={movie} />
+          </>
+        );
+      }}
+    />
+  );
 };
 
 export default topRatedMoviesPage;

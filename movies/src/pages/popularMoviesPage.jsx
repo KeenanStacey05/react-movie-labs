@@ -16,9 +16,16 @@ const PopularMoviesPage = () => {
     <PageTemplate
       title="Popular Movies"
       movies={movies}
-      action={(movie) => <AddToFavoritesIcon movie={movie} />}
+      action={(movie) => {
+        return (
+          <>
+            <AddToFavoritesIcon movie={movie} />
+            <AddtoPlaylistIcon movie={movie} />
+          </>
+        );
+      }}
     />
   );
-}
+};
 
 export default PopularMoviesPage;
