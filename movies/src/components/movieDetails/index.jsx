@@ -9,6 +9,8 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
+import { Link } from "react-router";
+import Button from '@mui/material/Button';
 
 const root = {
   display: "flex",
@@ -66,6 +68,13 @@ const MovieDetails = ({ movie }) => {
           </li>
         ))}
       </Paper>
+
+      <Link to={`/movies/recommendations/${movie.id}`}>
+        <Button variant="outlined" size="medium" color="primary">
+          Recommendations
+        </Button>
+      </Link>
+
       <Fab
         color="secondary"
         variant="extended"
