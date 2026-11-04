@@ -17,7 +17,7 @@ import Spinner from "../spinner";
 const formControl = {
   margin: 1,
   minWidth: "90%",
-  backgroundColor: "rgb(255, 255, 255)",
+  backgroundColor: "(255, 255, 255)",
 };
 
 export default function FilterMoviesCard(props) {

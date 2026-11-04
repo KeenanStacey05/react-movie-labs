@@ -70,7 +70,7 @@ const MovieDetails = ({ movie }) => {
       </Paper>
 
       <Link to={`/movies/recommendations/${movie.id}`}>
-        <Button variant="outlined" size="medium" color="primary">
+        <Button variant="outlined" size="medium" color="secondary">
           Recommendations
         </Button>
       </Link>

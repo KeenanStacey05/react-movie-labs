@@ -16,6 +16,29 @@ import TopRatedMoviesPage from "./pages/topRatedMoviesPage";
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage";
 import MustWatchPlaylistPage from "./pages/mustWatchPlaylistPage";
 import MovieRecommendationsPage from "./pages/movieRecommendationsPage";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#0F0F14',
+    },
+    secondary: {
+      main: '#FCA311',
+    },
+
+    background: {
+      default: '#0F0F14',
+      paper: '#0F0F14',
+    },
+
+    text: {
+      primary: '#F5F5F5',
+    }
+  },
+});
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,10 +52,12 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <SiteHeader />
-        <MoviesContextProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <SiteHeader />
+          <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} />
@@ -51,6 +76,7 @@ const App = () => {
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+    </ThemeProvider>
   );
 };
 

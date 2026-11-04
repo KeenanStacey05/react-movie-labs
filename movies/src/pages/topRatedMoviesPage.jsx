@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { getTopRatedMovies } from "../api/tmdb-api";
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
+import AddtoPlaylistIcon from "../components/cardIcons/addToPlaylist";
 
 const topRatedMoviesPage = () => {
   const [movies, setMovies] = useState([]);

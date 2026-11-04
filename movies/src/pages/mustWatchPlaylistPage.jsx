@@ -35,7 +35,7 @@ const MustWatchPlaylistPage = () => {
     <PageTemplate
       title="Must Watch Movies"
       movies={movies}
-      action={(movie) => <RemoveFromMustWatch movie={movie} />}
+      action={(movie) => <RemoveFromMustWatchIcon movie={movie} />}
     />
   );
 };

@@ -15,7 +15,7 @@ const RemoveFromMustWatchIcon = ({ movie }) => {
       aria-label="remove from must watch"
       onClick={handleRemoveFromMustWatch}
     >
-      <PlaylistRemoveIcon color="primary" fontSize="large" />
+      <PlaylistRemoveIcon color="secondary" fontSize="large" />
     </IconButton>
   );
 };
