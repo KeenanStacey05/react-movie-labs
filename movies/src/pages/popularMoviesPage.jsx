@@ -3,14 +3,22 @@ import PageTemplate from "../components/templateMovieListPage";
 import { getPopularMovies } from "../api/tmdb-api";
 import AddToFavoritesIcon from "../components/cardIcons/addToFavorites";
 import AddtoPlaylistIcon from "../components/cardIcons/addToPlaylist";
-const PopularMoviesPage = () => {
-  const [movies, setMovies] = useState([]);
+import { useQuery } from "@tanstack/react-query";
+import Spinner from "../components/spinner";
 
-  useEffect(() => {
-    getPopularMovies().then((movies) => {
-      setMovies(movies);
-    });
-  }, []);
+const PopularMoviesPage = () => {
+  const { data: movies, error, isPending, isError } = useQuery({
+    queryKey: ["popular"],
+    queryFn: getPopularMovies,
+  });
+
+  if (isPending) {
+    return <Spinner />;
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
 
   return (
     <PageTemplate
