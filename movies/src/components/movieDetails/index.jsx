@@ -11,6 +11,7 @@ import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews";
 import { Link } from "react-router";
 import Button from '@mui/material/Button';
+import MovieCast from "../MovieCast";
 
 const root = {
   display: "flex",
@@ -68,6 +69,8 @@ const MovieDetails = ({ movie }) => {
           </li>
         ))}
       </Paper>
+
+      <MovieCast movie={movie} />
 
       <Link to={`/movies/recommendations/${movie.id}`}>
         <Button variant="outlined" size="medium" color="secondary">
