@@ -2,7 +2,7 @@ import { useContext } from "react";
 import IconButton from "@mui/material/IconButton";
 import PlaylistRemoveIcon from "@mui/icons-material/PlaylistRemove";
 import { MoviesContext } from "../../contexts/moviesContext";
-
+import Tooltip from "@mui/material/Tooltip";
 const RemoveFromMustWatchIcon = ({ movie }) => {
   const context = useContext(MoviesContext);
 
@@ -11,12 +11,14 @@ const RemoveFromMustWatchIcon = ({ movie }) => {
     context.removeFromMustWatch(movie);
   };
   return (
+    <Tooltip title="Remove from Must Watch">
     <IconButton
       aria-label="remove from must watch"
       onClick={handleRemoveFromMustWatch}
     >
       <PlaylistRemoveIcon color="secondary" fontSize="large" />
     </IconButton>
+    </Tooltip>
   );
 };
 
